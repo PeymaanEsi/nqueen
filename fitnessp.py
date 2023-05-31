@@ -1,4 +1,4 @@
-from config import size_n
+from config import size_n, max_fitness
 
 def fitness(chroms):
 
@@ -31,6 +31,8 @@ def fitness(chroms):
 
         conflicts //= 2
 
-        data.append((chrom, conflicts))
+        fitness_value = max_fitness - conflicts
+
+        data.append([chrom, fitness_value])
 
     return data

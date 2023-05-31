@@ -1,7 +1,10 @@
-import config, generate, fitnessp
+import config, generate, fitnessp, sort
 
-cs = generate.generate(100)
+cs = generate.generate(5)
 
-cs.append([5, 5, 2, 6, 3, 8, 4, 7])
+cs.append([2, 5, 7, 1, 3, 0, 6, 4])
+cs.append([1, 0, 2, 3, 7, 5, 6, 4])
 
-print(fitnessp.fitness(cs))
+data = (fitnessp.fitness(cs))
+
+print(sort.sortdata(data))
