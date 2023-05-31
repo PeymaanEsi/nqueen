@@ -1,4 +1,4 @@
-import config
+from config import size_n
 from random import shuffle
 
 def generate(chroms):

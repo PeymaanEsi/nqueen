@@ -1,0 +1,2 @@
+def fitness(chroms):
+    pass
