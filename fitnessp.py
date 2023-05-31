@@ -1,4 +1,8 @@
+from config import size_n
+
 def fitness(chroms):
+
+    data = list()
 
     for chrom in chroms:
 
@@ -9,7 +13,24 @@ def fitness(chroms):
             if chrom.count(e) > 1:
 
                 conflicts += chrom.count(e) - 1
+            
+
+        for i in chrom:
+            
+            for j in chrom:
+
+                diff = abs(chrom.index(i) - chrom.index(j))
+
+                if diff == 0:
+
+                    pass 
+
+                elif diff == abs(i - j):
+
+                    conflicts += 1
 
         conflicts //= 2
 
-        print(conflicts)
+        data.append((chrom, conflicts))
+
+    return data
