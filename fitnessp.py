@@ -1,2 +1,2 @@
-def fitness(chrom):
+def fitness(chroms):
     pass

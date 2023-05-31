@@ -1,12 +1,10 @@
+import config
 from random import shuffle
 
-size_n = 8
-
-def generate(chrom):
+def generate(chroms):
     l = []
-    for i in range(chrom):
+    for i in range(chroms):
         l.append(list(range(size_n)))
         shuffle(l[i])
     return l
 
-print(generate(100))
