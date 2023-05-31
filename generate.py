@@ -1,11 +1,12 @@
-import random 
-size_n=8
-def generate(choromozome):
+from random import shuffle
 
-  population=[random.choices(range(0,size_n), k=size_n) for _ in range(choromozome)]
-  print(population)
+size_n = 8
 
+def generate(chrom):
+    l = []
+    for i in range(chrom):
+        l.append(list(range(size_n)))
+        shuffle(l[i])
+    return l
 
-if __name__  ==  "__main__":
-      generate(100)
-  
+print(generate(100))
