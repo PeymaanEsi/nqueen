@@ -16,10 +16,13 @@ def scramble(chroms, size_n):
 
             low = temp 
 
-        sample = chroms[low:up] 
+        print('Mutation Index Range:', low, ':', up) 
+
+        sample = chrom[low:up] 
 
         random.shuffle(sample) 
 
         chrom[low:up] = sample 
 
     return chroms
+

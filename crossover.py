@@ -32,4 +32,5 @@ def crossover(chroms, size_n):
 
         newchroms.append(child2) 
         
-    return newchroms
+    return newchroms 
+
