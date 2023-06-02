@@ -1,3 +1,16 @@
-def elitism(chroms, share):
+def elitism(data, share): 
 
-    return chroms
+    chroms = [] 
+
+    survivals = int(len(data) * share) 
+
+    data.sort(key=lambda a: a[3], reverse=True) 
+
+    suvivors = data[:survivals] 
+
+    for e in suvivors: 
+
+        chroms.append(e[0])
+
+    return chroms 
+

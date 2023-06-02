@@ -1,6 +1,6 @@
 def sortdata(data, max_fitness): 
 
-    data.sort(key=lambda a: a[1]) 
+    data.sort(key=lambda a: a[1], reverse=True) 
 
     sumchance = 0 
 
