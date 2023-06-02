@@ -16,10 +16,10 @@ def scramble(chroms, size_n):
 
             low = temp 
 
-        sample = chroms[low: up] 
+        sample = chroms[low:up] 
 
         random.shuffle(sample) 
 
-        chroms[low:up] = sample 
+        chrom[low:up] = sample 
 
     return chroms
