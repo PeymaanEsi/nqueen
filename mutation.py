@@ -1,11 +1,22 @@
 from config import size_n
-import random 
-import numpy as np 
-def mutation(chroms):
-    for chrom in chroms: 
-        for i in chrom:
-            low=np.random.randint(0,size_n-1)
-            up=np.random.randint(1,size_n-1)
-            scramble=np.random.choice(np.arange(low,up+1))
-    return scramble
-            
+
+import random
+
+def scramble(chroms):
+
+    for chrom in chroms:
+
+        low = random.randrange(8)
+        up = random.randrange(8)
+
+        if low > up:
+            temp = up
+            up = low
+            low = temp
+
+        print(low, up)
+        sample = chroms[low: up]
+        random.shuffle(sample)
+        chroms[low:up] = sample
+
+    return chroms

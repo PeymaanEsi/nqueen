@@ -1,4 +1,4 @@
-import config, generate, fitness, sort, crossover
+import config, generate, fitness, sort, crossover, mutation
 
 cs = generate.generate(config.samples)
 
@@ -7,8 +7,10 @@ cs = generate.generate(config.samples)
 
 data = (fitness.fitness(cs))
 
-print(sort.sortdata(data))
+# print(sort.sortdata(data))
 
 print(cs)
 
 print(crossover.crossover(cs))
+
+print(mutation.scramble(cs))
