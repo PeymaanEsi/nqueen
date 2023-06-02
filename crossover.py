@@ -15,8 +15,4 @@ def crossover(chroms):
             for j in range(0,size_n):
                 newchroms[i].append(chroms[i+1])
                 newchroms[i+1].apppend(chroms[i])
-                
-    # /   ///////
-    
-    # /   ////////
     return newchroms

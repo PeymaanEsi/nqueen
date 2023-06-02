@@ -7,7 +7,7 @@ cs = generate.generate(config.samples)
 
 data = (fitness.fitness(cs))
 
-# print(sort.sortdata(data))
+print(sort.sortdata(data))
 
 print(cs)
 
