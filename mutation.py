@@ -1,22 +1,25 @@
-from config import size_n
+import random 
 
-import random
+def scramble(chroms, size_n): 
 
-def scramble(chroms):
+    for chrom in chroms: 
 
-    for chrom in chroms:
+        low = random.randrange(size_n) 
 
-        low = random.randrange(8)
-        up = random.randrange(8)
+        up = random.randrange(size_n) 
 
-        if low > up:
-            temp = up
-            up = low
-            low = temp
+        if low > up: 
 
-        print(low, up)
-        sample = chroms[low: up]
-        random.shuffle(sample)
-        chroms[low:up] = sample
+            temp = up 
+
+            up = low 
+
+            low = temp 
+
+        sample = chroms[low: up] 
+
+        random.shuffle(sample) 
+
+        chroms[low:up] = sample 
 
     return chroms

@@ -1,38 +1,32 @@
-from config import size_n, max_fitness
+def fitness(chroms, size_n, max_fitness): 
 
-def fitness(chroms):
+    data = list() 
 
-    data = list()
+    for chrom in chroms: 
 
-    for chrom in chroms:
-
-        conflicts = 0
+        conflicts = 0 
         
-        for e in chrom:
+        for e in chrom: 
 
-            if chrom.count(e) > 1:
+            if chrom.count(e) > 1: 
 
-                conflicts += chrom.count(e) - 1
+                conflicts += chrom.count(e) - 1 
+
+        for i in chrom: 
             
+            for j in chrom: 
 
-        for i in chrom:
-            
-            for j in chrom:
+                diff = abs(chrom.index(i) - chrom.index(j)) 
 
-                diff = abs(chrom.index(i) - chrom.index(j))
+                if diff != 0 and diff == abs(i - j): 
 
-                if diff == 0:
+                    conflicts += 1 
 
-                    pass 
+        conflicts //= 2 
 
-                elif diff == abs(i - j):
+        fitness_value = max_fitness - conflicts 
 
-                    conflicts += 1
+        data.append([chrom, fitness_value]) 
 
-        conflicts //= 2
+    return data 
 
-        fitness_value = max_fitness - conflicts
-
-        data.append([chrom, fitness_value])
-
-    return data
