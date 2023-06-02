@@ -24,8 +24,6 @@ print()
 
 samples = firstgen(genesis, size_n) 
 
-print('Generation Number', tries) 
-
 print(samples) 
 
 print()
@@ -53,6 +51,8 @@ print()
 while not found: 
     
     tries += 1
+
+    print('Crossover Number', tries) 
 
     print('Crossover Phase With The Mask: ', end='') 
 
@@ -118,22 +118,26 @@ while not found:
 
             break 
 
-        else:
+    else:
 
-            print('Perfect Answer Not Found!') 
+        print('Perfect Answer Not Found!') 
 
-            print() 
+        print() 
 
-            print('Elitism Phase:') 
+        print('Elitism Phase:') 
 
-            print() 
+        print() 
 
-            print('Reducing Members To', int(len(samples) * cutshare), 'By Survival Chance...') 
+        print('Reducing Members To', int(len(samples) * cutshare), 'By Survival Chance...') 
 
-            print() 
+        print() 
 
-            samples = elitism(analitycs, cutshare) 
+        samples = elitism(analitycs, cutshare) 
 
-            print('Picked Members:') 
+        print('Picked Members:') 
 
-            print(samples)
+        print(samples) 
+
+        print() 
+
+        

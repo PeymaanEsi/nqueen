@@ -2,7 +2,7 @@ import random
 
 def crossover(chroms, size_n): 
 
-    mask = [random.randrange(2) for i in range(8)] 
+    mask = [random.randrange(2) for i in range(size_n)] 
 
     print(mask) 
 
@@ -10,9 +10,9 @@ def crossover(chroms, size_n):
 
     for i in range(0, len(chroms), 2): 
 
-        child1 = [0 for i in range(8)] 
+        child1 = [0 for i in range(size_n)] 
 
-        child2 = [0 for i in range(8)] 
+        child2 = [0 for i in range(size_n)] 
 
         for j in range(0,size_n): 
 
