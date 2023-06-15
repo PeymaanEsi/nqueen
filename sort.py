@@ -4,6 +4,8 @@ def sortdata(data, max_fitness):
 
     sumchance = 0 
 
+    selectchance = 0 
+
     for i in range(len(data)): 
 
         chance = data[i][1] / max_fitness 
@@ -15,6 +17,18 @@ def sortdata(data, max_fitness):
     for i in range(len(data)): 
 
         data[i].append(data[i][2] / sumchance) 
+
+        selectrange = [] 
+
+        selectrange.append(selectchance) 
+
+        selectchance += data[i][3] 
+
+        selectrange.append(selectchance) 
+
+        data[i].append(selectchance) 
+
+        data[i].append(selectrange) 
 
     return data 
 

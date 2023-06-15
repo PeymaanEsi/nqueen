@@ -12,6 +12,10 @@ from mutation import *
 
 from cut import * 
 
+print('BEGIN') 
+
+print() 
+
 tries = 0 
 
 found = False 
@@ -30,9 +34,9 @@ print()
 
 print('Calculating Members\' Fitness:') 
 
-samplesdata = fitness(samples, size_n, max_fitness) 
+print() 
 
-print('Fitness:') 
+samplesdata = fitness(samples, size_n, max_fitness) 
 
 print(samplesdata) 
 
@@ -40,45 +44,73 @@ print()
 
 print('Sorting Members By Survival Chance:') 
 
-analitycs = sortdata(samplesdata, max_fitness) 
+print() 
 
-print('Population:') 
+analitycs = sortdata(samplesdata, max_fitness) 
 
 print(analitycs) 
 
 print() 
 
 while not found: 
+
+    print('Current Population:', len(analitycs)) 
+
+    print() 
     
     tries += 1
 
-    print('Crossover Number', tries) 
+    print('Crossover Phase Number', tries) 
 
-    print('Crossover Phase With The Mask: ', end='') 
+    print() 
 
-    newsamples = crossover(samples, size_n)
+    print('Crossover Phase With The Masks: ') 
+
+    print() 
+
+    newsamples = [] 
+
+    for i in range(0, len(analitycs), 2):
+
+        r = random.random()
+
+        parent1 = list(filter(lambda x: x if r >= x[5][0] and r <= x[5][1] else None,  analitycs))[0][0] 
+
+        r = random.random() 
+
+        parent2 = list(filter(lambda x: x if r >= x[5][0] and r <= x[5][1] else None,  analitycs))[0][0] 
+
+        newsamples += crossover(parent1, parent2, size_n) 
 
     print('New Members:') 
+
+    print() 
 
     print(newsamples) 
 
     print() 
 
-    print('Mutation Phase:') 
+    print('Mutation Phase Number', tries) 
+
+    print() 
 
     scrambledsamples = scramble(newsamples, size_n) 
 
     print('Mutant Samples:') 
 
+    print() 
+
     print(scrambledsamples) 
 
-    print('Adding New Members To Pupolation And Calculate Fitnees And Survival Chance...') 
+    print() 
+
+    print('Adding New Members To Pupolation And Calculate Fitnees:') 
+
+    print() 
 
     samples += scrambledsamples 
 
     samplesdata = fitness(samples, size_n, max_fitness) 
-
-    print('Fitness:') 
 
     print(samplesdata) 
 
@@ -86,15 +118,17 @@ while not found:
 
     print('Sorting New Members By Survival Chance:') 
 
-    analitycs = sortdata(samplesdata, max_fitness) 
+    print() 
 
-    print('Population:') 
+    analitycs = sortdata(samplesdata, max_fitness) 
 
     print(analitycs) 
 
     print() 
 
-    print('Searching For Perfecr Answer...') 
+    print('Searching For Perfecr Answer:')
+
+    print()  
 
     for element in analitycs: 
 
@@ -108,11 +142,15 @@ while not found:
 
             print() 
 
-            print('After', tries, 'Generation.') 
+            print('After', tries, 'Generation And', len(analitycs), 'Members.') 
 
             print() 
 
             print(perfectanswer) 
+
+            print() 
+
+            print('END') 
 
             print() 
 
@@ -124,7 +162,7 @@ while not found:
 
         print() 
 
-        print('Elitism Phase:') 
+        print('Elitism Phase Number', tries) 
 
         print() 
 
@@ -135,6 +173,8 @@ while not found:
         samples = elitism(analitycs, cutshare) 
 
         print('Picked Members:') 
+
+        print() 
 
         print(samples) 
 

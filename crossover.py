@@ -1,36 +1,30 @@
 import random
 
-def crossover(chroms, size_n): 
+def crossover(parent1, parent2, size_n): 
 
     mask = [random.randrange(2) for i in range(size_n)] 
 
     print(mask) 
 
-    newchroms = [] 
+    print() 
 
-    for i in range(0, len(chroms), 2): 
+    child1 = [0 for i in range(size_n)] 
 
-        child1 = [0 for i in range(size_n)] 
+    child2 = [0 for i in range(size_n)] 
 
-        child2 = [0 for i in range(size_n)] 
+    for i in range(0,size_n): 
 
-        for j in range(0,size_n): 
+        if mask[i]==1: 
 
-            if mask[j]==1: 
+            child1[i] = parent1[i]
 
-                child1[j] = chroms[i][j] 
+            child2[i] = parent2[i] 
 
-                child2[j] = chroms[i + 1][j] 
+        elif mask[i]==0: 
 
-            elif mask[j]==0: 
+            child1[i] = parent2[i] 
 
-                child1[j] = chroms[i + 1][j] 
-
-                child2[j] = chroms[i][j] 
-
-        newchroms.append(child1) 
-
-        newchroms.append(child2) 
+            child2[i] = parent1[i] 
         
-    return newchroms 
+    return [child1, child2] 
 
