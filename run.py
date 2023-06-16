@@ -166,11 +166,11 @@ while not found:
 
         print() 
 
-        print('Current Population:', len(analitycs)) 
+        samples = elitism(analitycs, cutshare) 
+
+        print('Current Population:', len(samples)) 
 
         print() 
-
-        samples = elitism(analitycs, cutshare) 
 
         print('Picked Members:') 
 
