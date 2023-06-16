@@ -8,7 +8,11 @@ def sortdata(data, max_fitness):
 
     for i in range(len(data)): 
 
-        chance = data[i][1] / max_fitness 
+        rank = len(data) - i 
+
+        data[i].append(rank) 
+
+        chance = rank / len(data) 
 
         data[i].append(chance) 
 
@@ -16,13 +20,13 @@ def sortdata(data, max_fitness):
 
     for i in range(len(data)): 
 
-        data[i].append(data[i][2] / sumchance) 
+        data[i].append(data[i][3] / sumchance) 
 
         selectrange = [] 
 
         selectrange.append(selectchance) 
 
-        selectchance += data[i][3] 
+        selectchance += data[i][4] 
 
         selectrange.append(selectchance) 
 

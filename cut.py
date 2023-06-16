@@ -4,7 +4,7 @@ def elitism(data, share):
 
     survivals = int(len(data) * share) 
 
-    data.sort(key=lambda a: a[3], reverse=True) 
+    data.sort(key=lambda a: a[4], reverse=True) 
 
     suvivors = data[:survivals] 
 

@@ -74,11 +74,11 @@ while not found:
 
         r = random.random()
 
-        parent1 = list(filter(lambda x: x if r >= x[5][0] and r <= x[5][1] else None,  analitycs))[0][0] 
+        parent1 = list(filter(lambda x: x if r >= x[6][0] and r <= x[6][1] else None,  analitycs))[0][0] 
 
         r = random.random() 
 
-        parent2 = list(filter(lambda x: x if r >= x[5][0] and r <= x[5][1] else None,  analitycs))[0][0] 
+        parent2 = list(filter(lambda x: x if r >= x[6][0] and r <= x[6][1] else None,  analitycs))[0][0] 
 
         newsamples += crossover(parent1, parent2, size_n) 
 
