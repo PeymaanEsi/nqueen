@@ -53,10 +53,6 @@ print(analitycs)
 print() 
 
 while not found: 
-
-    print('Current Population:', len(analitycs)) 
-
-    print() 
     
     tries += 1
 
@@ -166,7 +162,11 @@ while not found:
 
         print() 
 
-        print('Reducing Members To', int(len(samples) * cutshare), 'By Survival Chance...') 
+        print('Reducing Members To', int(len(samples) * cutshare), 'By Survival Chance:') 
+
+        print() 
+
+        print('Current Population:', len(analitycs)) 
 
         print() 
 
